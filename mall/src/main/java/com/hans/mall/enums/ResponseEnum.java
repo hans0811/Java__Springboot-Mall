@@ -22,7 +22,13 @@ public enum ResponseEnum {
 
     USERNAME_OR_PASSWORD_ERROR(11, "username or password wrong"),
 
-    PRODUCT_OFF_SALE_OR_DELETE(12, "Item not exist")
+    PRODUCT_OFF_SALE_OR_DELETE(12, "Item not exist"),
+
+    PRODUCT_NOT_EXIST(13, "Item doesn't exist"),
+
+    PRODUCT_STOCK_ERROR(14, "Item quantity eroor"),
+
+    CART_PRODUCT_NOT_EXIST(13, "Item doesn't exist in cart"),
     ;
 
     Integer code;

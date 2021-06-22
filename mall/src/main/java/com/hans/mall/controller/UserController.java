@@ -30,14 +30,14 @@ public class UserController {
     private UserServiceImpl userService;
 
     @PostMapping("/user/register")
-    public ResponseVo register(@Valid @RequestBody UserRegisterForm userRegisterForm, BindingResult bindingResult) {
+    public ResponseVo register(@Valid @RequestBody UserRegisterForm userRegisterForm) {
 
-        if ( bindingResult.hasErrors() ) {
-            log.error("register error, {} {}",
-                    Objects.requireNonNull(bindingResult.getFieldError()).getField(),
-                    bindingResult.getFieldError().getDefaultMessage());
-            return ResponseVo.error(PARAM_ERROR, bindingResult);
-        }
+//        if ( bindingResult.hasErrors() ) {
+//            log.error("register error, {} {}",
+//                    Objects.requireNonNull(bindingResult.getFieldError()).getField(),
+//                    bindingResult.getFieldError().getDefaultMessage());
+//            return ResponseVo.error(PARAM_ERROR, bindingResult);
+//        }
 
         User user = new User();
         BeanUtils.copyProperties(userRegisterForm, user);
@@ -47,12 +47,7 @@ public class UserController {
 
     @PostMapping("/user/login")
     public ResponseVo<User> login(@Valid @RequestBody UserLoginForm userLoginForm,
-                                  BindingResult bindingResult,
                                   HttpSession session) {
-
-        if ( bindingResult.hasErrors() ) {
-            return ResponseVo.error(PARAM_ERROR, bindingResult);
-        }
 
         ResponseVo<User> userResponseVo = userService.login(userLoginForm.getUsername(), userLoginForm.getPassword());
 

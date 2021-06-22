@@ -28,8 +28,8 @@ class OrderMapperTest {
 
     @Test
     void selectByPrimaryKey() {
-        Order order = orderMapper.selectByPrimaryKey(1);
-        System.out.println(order);
+//        Order order = orderMapper.selectByPrimaryKey(1);
+//        System.out.println(order);
     }
 
     @Test
