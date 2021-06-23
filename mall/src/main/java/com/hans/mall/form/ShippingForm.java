@@ -1,32 +1,33 @@
-package com.hans.mall.pojo;
+package com.hans.mall.form;
 
 import lombok.Data;
 
-import java.util.Date;
+import javax.validation.constraints.NotBlank;
 
 @Data
-public class Shipping {
-    private Integer id;
+public class ShippingForm {
 
-    private Integer userId;
-
+    @NotBlank
     private String receiverName;
 
+    @NotBlank
     private String receiverPhone;
 
+    @NotBlank
     private String receiverMobile;
 
+    @NotBlank
     private String receiverProvince;
 
+    @NotBlank
     private String receiverCity;
 
+    @NotBlank
     private String receiverDistrict;
 
+    @NotBlank
     private String receiverAddress;
 
+    @NotBlank
     private String receiverZip;
-
-    private Date createTime;
-
-    private Date updateTime;
 }
