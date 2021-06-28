@@ -29,7 +29,16 @@ public enum ResponseEnum {
     PRODUCT_STOCK_ERROR(14, "Item quantity eroor"),
 
     CART_PRODUCT_NOT_EXIST(13, "Item doesn't exist in cart"),
-    DELETE_SHIPPING_FAIL(16, "delete address failure")
+
+    DELETE_SHIPPING_FAIL(16, "delete address failure"),
+
+    SHIPPING_NOT_EXIST(17, "Shipping address not exist"),
+
+    CART_PRODUCT_IS_EMPTY(18, "Cart not exist"),
+
+    OREDER_NOT_EXIST(19, "Order not exist"),
+
+    OREDER_STATUS_ERROR(20, "Order status order error, already paid"),
     ;
 
     Integer code;

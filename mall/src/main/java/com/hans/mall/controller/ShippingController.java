@@ -4,6 +4,7 @@ import com.hans.mall.consts.MallConst;
 import com.hans.mall.form.ShippingForm;
 import com.hans.mall.pojo.User;
 import com.hans.mall.service.IShippingService;
+import com.hans.mall.service.impl.ShippingServiceImpl;
 import com.hans.mall.vo.ResponseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ import javax.validation.Valid;
 public class ShippingController {
 
     @Autowired
-    private IShippingService shippingService;
+    private ShippingServiceImpl shippingService;
 
     @PostMapping("/shippings")
     public ResponseVo add(@Valid @RequestBody ShippingForm form,
@@ -46,8 +47,4 @@ public class ShippingController {
         User user = (User) session.getAttribute(MallConst.CURRENT_USER);
         return shippingService.list(user.getId(), pageNum, pageSize);
     }
-
-
-
-
 }

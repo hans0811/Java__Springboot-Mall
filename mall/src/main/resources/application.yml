@@ -7,6 +7,11 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
+  rabbitmq:
+    address: 127.0.0.1
+    port: 5672
+    user: guest
+    password: guest
 
 mybatis:
   configuration:
@@ -18,3 +23,4 @@ mybatis:
 logging:
   pattern:
     console: "[%thread] %-5level %logger{36} - %msg%n"
+
